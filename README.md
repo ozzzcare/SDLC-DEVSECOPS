@@ -85,6 +85,7 @@ Se implementará el monitoreo continuo de seguridad para detectar y responder a 
 A su vez se mantendrán actualizados todos los componentes de la aplicación, incluidos los contenedores Docker y las dependencias de software, para mitigar posibles riesgos de seguridad.
 
 ## DIAGRAMA S-SDLC & DevSecOps
+![DIAGRAM DEVSECOPS](https://github.com/ozzzcare/SDLC-DEVSECOPS/assets/166165564/ad29a6c6-9d9a-48bf-8800-0a88491eea4c)
 
 
 ## IMPLEMENTACION
