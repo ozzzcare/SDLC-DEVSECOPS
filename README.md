@@ -70,9 +70,9 @@ Ejecutar tu aplicación Docker sin ser usuario root y con los mínimos privilegi
 Para ejecutar tu aplicación Docker sin ser usuario root y con los mínimos privilegios, se siguen estos pasos:
 
 1. Definir un usuario no root: Crea un usuario no root en tu sistema Docker host que tendrá los permisos necesarios para ejecutar tu aplicación. Para ello utilizaremos el siguiente comando:   
-´´´bash
+```bash
 sudo useradd -r -m
-´´´
+```
 
 Este comando creará un usuario root con un directorio personal y establecerá los permisos adecuados para que el usuario pueda ejecutar los comandos.
 
