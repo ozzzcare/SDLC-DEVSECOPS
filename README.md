@@ -77,14 +77,14 @@ sudo useradd -r -m
 Este comando creará un usuario root con un directorio personal y establecerá los permisos adecuados para que el usuario pueda ejecutar los comandos.
 
 2. Crear un grupo para la aplicación: Para ello utilizaremos el siguiente comando:
-´´´bash
+```bash
 sudo groupadd
-´´´
+```
 
 3. Agregar el usuario creado en el paso 1 al grupo que creado en el paso 2 utilizando el siguiente comando:
-´´´bash
+```bash
  sudo usermod -aG
-´´´
+```
 
 4. Establece los permisos de archivo correctos: Utilizando el comando chmod podemos establecer los permisso de archivo para no otorgar permisos de escritura a ninguún archivo que no lo necesite. 
 
