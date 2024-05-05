@@ -73,6 +73,7 @@ Para ejecutar tu aplicación Docker sin ser usuario root y con los mínimos priv
 ```bash
 sudo useradd -r -m
 ´´´
+
 Este comando creará un usuario root con un directorio personal y establecerá los permisos adecuados para que el usuario pueda ejecutar los comandos.
 
 2. Crear un grupo para la aplicación: Para ello utilizaremos el siguiente comando:
