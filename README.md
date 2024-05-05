@@ -86,7 +86,7 @@ A su vez se mantendrán actualizados todos los componentes de la aplicación, in
 
 ## DIAGRAMA S-SDLC & DevSecOps
 ![DIAGRAM DEVSECOPS](https://github.com/ozzzcare/SDLC-DEVSECOPS/assets/166165564/ad29a6c6-9d9a-48bf-8800-0a88491eea4c)
-
+![DIAGRAM SSDLC](https://github.com/ozzzcare/SDLC-DEVSECOPS/assets/166165564/df7840b0-61e8-486b-90a8-9b21e0df892d)
 
 ## IMPLEMENTACION
 
