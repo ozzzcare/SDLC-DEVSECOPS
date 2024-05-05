@@ -6,8 +6,9 @@ Practica 2 S-SDLC - DevSecOps
 
 ## DEFINICIÓN
 
-La actividad se ha llevado a cabo estudiando la aplicacion TO-DO, que forma parte del tutorial de inicio de Docker. 
-Para ejecutarla, se ha tratado de aplicar S-SDLC con el objetivo de seguir una metodologia de desarrollo seguro desde el inicio del proyecto. La guia tutorial de Docker muestra el paso a paso, incluida la instalacion de las herramientas necesarias, para crear una imagen, contenizarla y enviarla a un repositorio, habiendo logrado un resultado satisfactorio. Para ello, se ha seguido el siguiente protocolo: 
+La actividad se ha llevado a cabo estudiando las aplicaciones TO-DO que los integrantes del grupo desarrollamos en l primera actividad.
+Esta aplicación cuenta con la implementación del S-SDLC así como del DevSecOps, metodologías que proporcionan un enfoque seguro para el proceso end-to-end del desarrollo. 
+La guia tutorial de Docker muestra el paso a paso para la ejecución de la aplicacición, incluida la instalacion de las herramientas necesarias para crear una imagen, contenizarla y enviarla a un repositorio, habiendo logrado un resultado satisfactorio. Para ello, se ha seguido el siguiente protocolo: 
 
  - Identificacion y seleccion de la aplicacion.
  - Creacion de la estructura del proyecto.
@@ -186,11 +187,11 @@ docker run -dp 0.0.0.0:3000:3000 YOUR-USER-NAME/getting-started
 
 ## CONCLUSIONES
 
-Se reconoce la importancia del Ciclo de Vida de Desarrollo de Software (SDLC) para garantizar un desarrollo seguro desde el inicio del proyecto hasta su despliegue y mantenimiento.
-Se reconoce la importancia del DevSecOps para desarrollar de forma segura el Software, estableciento un entorno seguro en el proceso end-to-end a través de pruebas y monitoreo. 
-Se ha identificado y seleccionado una aplicacion existente (TO-DO) como referencia y se ha creado una estructura de proyecto que incluye los archivos y herramientas necesarios. 
-Se han desarrollado consideraciones de seguridad utilizando el SDLC, aplicando tareas de seguridad en cada etapa.
-Se han tenido en cuenta las herramientas creadas por los integrantes del grupo, así como sus aplicativos de seguridad y sus posibles vulnerabilidades. 
-Se ha seguido un proceso paso a paso para implementar la aplicacion utilizando Docker, destacando la importancia de garantizar la seguridad en cada paso. 
-Se han utilizado diversas herramientas de seguridad, como Git Bash, Visual Studio Code y Docker Playground, para garantizar la seguridad durante el desarrollo y despliegue de la aplicacion.
+* Se reconoce la importancia del Ciclo de Vida de Desarrollo de Software (SDLC) para garantizar un desarrollo seguro desde el inicio del proyecto hasta su despliegue y mantenimiento.
+* Se reconoce la importancia del DevSecOps para desarrollar de forma segura el Software, estableciento un entorno seguro en el proceso end-to-end a través de pruebas y monitoreo. 
+* Se ha identificado y seleccionado una aplicacion existente (TO-DO) como referencia y se ha creado una estructura de proyecto que incluye los archivos y herramientas necesarios. 
+* Se han desarrollado consideraciones de seguridad utilizando el SDLC, aplicando tareas de seguridad en cada etapa.
+* Se han tenido en cuenta las herramientas creadas por los integrantes del grupo, así como sus aplicativos de seguridad y sus posibles vulnerabilidades. 
+* Se ha seguido un proceso paso a paso para implementar la aplicacion utilizando Docker, destacando la importancia de garantizar la seguridad en cada paso. 
+* Se han utilizado diversas herramientas de seguridad, como Git Bash, Visual Studio Code y Docker Playground, para garantizar la seguridad durante el desarrollo y despliegue de la aplicacion.
 
