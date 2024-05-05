@@ -34,7 +34,8 @@ Para llevar a cabo la ejecucion de la aplicacion necesitamos las siguientes herr
 ## PARTICIPANTES 
 * PABLO SERNA ARRAZOLA - https://github.com/paserarra0/to-do
 * OSCAR MELIM HERNANDEZ - https://github.com/ozzzcare/proyecto-sdlc
-* MIGUEL ANGEL VELAZQUEZ RODELA - PENDING TO ADD
+* MIGUEL ANGEL VELAZQUEZ RODELA - https://github.com/Tekurojo/Proyecto-SDLC-to-do
+  
 
 ## ANÁLISIS DE PROYECTOS ANTERIORES
 
@@ -47,8 +48,45 @@ Para aplicar un enfoque metodologico para el desarrollo de software, necesita ap
 
 Todas las lineas de codigo empleadas para nuestra aplicacion deben pasar por una herramienta de analisis estatico que nos alerte de fallos en el codigo y sobretodo de vulnerabilidades.
 
+Tanto el Ciclo de Vida de Desarrollo de Software (SDLC) como la metodología DevSecOps han sido esenciales para garantizar el desarrollo seguro de nuestro proyecto.
+Para concluir, las medidas adoptadas tanto del punto de vista DevSecOps y S-SDLC son las siguientes:
+* Creación de usuarios y permisos
+* Utilización de imágenes seguras (Docker Content Trust)
+* Análisis estático de código
+* Pruebas de seguridad automatizadas
+* Implementación en una máquina virtual segura (control de puertos)
+* Actividades de monitoreo y mantenimiento de la aplicación
+
 ## CONSIDERACIONES DE SEGURIDAD 
 
+Se incluye como consideraciones de seguridad para el proyecto:
+
+Ejecutar tu aplicación Docker sin ser usuario root y con los mínimos privilegios. Beneficios de ejecutar tu aplicación sin ser usuario root:
+
+-Seguridad: Ejecutar tu aplicación sin ser usuario root ayuda a reducir la superficie de ataque y a proteger tu sistema de ataques.
+-Aislamiento: Ejecutar tu aplicación en un contenedor aislado ayuda a proteger tu sistema de otros procesos que se ejecutan en el host.
+-Portabilidad: Las aplicaciones que se ejecutan en contenedores son más portátiles y se pueden ejecutar en cualquier sistema que tenga Docker instalado. 
+
+Para ejecutar tu aplicación Docker sin ser usuario root y con los mínimos privilegios, se siguen estos pasos:
+
+1. Definir un usuario no root: Crea un usuario no root en tu sistema Docker host que tendrá los permisos necesarios para ejecutar tu aplicación. Para ello utilizaremos el siguiente comando:
+   
+```bash
+sudo useradd -r -m
+´´´
+Este comando creará un usuario root con un directorio personal y establecerá los permisos adecuados para que el usuario pueda ejecutar los comandos.
+
+2. Crear un grupo para la aplicación: Para ello utilizaremos el siguiente comando:
+
+```bash
+sudo groupadd
+´´´
+3. Agregar el usuario creado en el paso 1 al grupo que creado en el paso 2 utilizando el siguiente comando:
+
+```bash
+ sudo usermod -aG
+´´´
+4. Establece los permisos de archivo correctos: Utilizando el comando chmod podemos establecer los permisso de archivo para no otorgar permisos de escritura a ninguún archivo que no lo necesite. 
 
 ## DevSecOps
 
@@ -93,6 +131,15 @@ A su vez se mantendrán actualizados todos los componentes de la aplicación, in
 Instalar Docker 
 Instalar Git Bash
 Instalar Visual Studio Code
+
+Pasos previos a la instalación de Docker.
+
+Aislar la red: Ejecuta la aplicación en una red Docker separada para evitar la comunicación con otras aplicaciones o el host. Para ello, utilizaremos la opción --network en el comando docker run para especificar la red.
+Crear una red personalizada con el comando docker network create.
+
+Limitar puertos expuestos: Unicamente dejaremos expuestos los puertos necesarios para el funcionamiento de la aplicación. Utilizaremos la opción -p : en el comando docker run para especificar los puertos. No exponer puertos innecesarios que podrían ser utilizados para ataques.
+
+Utilizar la herramienta Snyk para escanear vulnerabilidades en aplicaciones Docker: Priorizar las vulnerabilidades críticas y tomar las medidas necesarias para corregirlas. Esto puede implicar actualizar dependencias, modificar configuraciones o reemplazar componentes vulnerables.
 
 1. CLonar el repositorio del to-do app: 
 ```bash
@@ -139,8 +186,11 @@ docker run -dp 0.0.0.0:3000:3000 YOUR-USER-NAME/getting-started
 
 ## CONCLUSIONES
 
-Se reconoce la importancia del Ciclo de Vida de Desarrollo de Software (SDLC) para garantizar un desarrollo seguro desde el inicio del proyecto hasta su despliegue y mantenimiento. 
+Se reconoce la importancia del Ciclo de Vida de Desarrollo de Software (SDLC) para garantizar un desarrollo seguro desde el inicio del proyecto hasta su despliegue y mantenimiento.
+Se reconoce la importancia del DevSecOps para desarrollar de forma segura el Software, estableciento un entorno seguro en el proceso end-to-end a través de pruebas y monitoreo. 
 Se ha identificado y seleccionado una aplicacion existente (TO-DO) como referencia y se ha creado una estructura de proyecto que incluye los archivos y herramientas necesarios. 
-Se han desarrollado consideraciones de seguridad utilizando el SDLC, aplicando tareas de seguridad en cada etapa. 
+Se han desarrollado consideraciones de seguridad utilizando el SDLC, aplicando tareas de seguridad en cada etapa.
+Se han tenido en cuenta las herramientas creadas por los integrantes del grupo, así como sus aplicativos de seguridad y sus posibles vulnerabilidades. 
 Se ha seguido un proceso paso a paso para implementar la aplicacion utilizando Docker, destacando la importancia de garantizar la seguridad en cada paso. 
 Se han utilizado diversas herramientas de seguridad, como Git Bash, Visual Studio Code y Docker Playground, para garantizar la seguridad durante el desarrollo y despliegue de la aplicacion.
+
