@@ -216,7 +216,7 @@ El script revisará la configuración de Docker según las recomendaciones del C
 ### Paso 3: Interpretar los resultados
 Después de ejecutar el script, verás una salida detallada con varias verificaciones y sus resultados. Cada verificación vendrá con una descripción y un estado que puede ser `PASS`, `WARN`, o `INFO`. Revisa estos resultados y ajusta tu configuración de Docker según las recomendaciones.
 
-# Resultados del analsiis de la aplicacion sin modificar parametros
+# Resultados del análisis de la aplicacion sin modificar parámetros
 
 1. Linux Hosts Specific Configuration
 
@@ -255,8 +255,8 @@ Después de ejecutar el script, verás una salida detallada con varias verificac
 
 1.2 General Host Configuration
 
-	 [WARN] 1.2.1 - Ensure a separate partition for containers has been created (Automated)
-        Peligro: Repetido del punto 1.1.1.
+[WARN] 1.2.1 - Ensure a separate partition for containers has been created (Automated)
+Peligro: Repetido del punto 1.1.1.
 
 2. Docker Daemon Configuration
 
