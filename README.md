@@ -378,6 +378,50 @@ Acciones Recomendadas
 * Limitar Recursos: Establece límites de uso de memoria y CPU para los contenedores.
 * Restringir Privilegios: Configura los contenedores para que no adquieran privilegios adicionales.
 * Especificar Interfaces de Red: Asegúrate de que el tráfico de contenedores esté vinculado a interfaces de red específicas.
+
+
+
+
+## RASP: Protección del lado del servidor en tiempo real
+
+### Paso 1: Instalar Trivy
+
+```bash
+sudo apt-get install wget apt-transport-https gnupg lsb-release
+wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
+sudo apt-get update
+sudo apt-get install trivy
+```
+Reemplazar [YOUR_CACHE_DIR] con el directorio de caché de la máquina.
+
+```bash
+docker pull aquasec/trivy:0.17.2
+```
+
+### Paso 2: Scripts para exploración de caché
+
+Borrar cachés
+
+```bash
+$ trivy image --clear-cache
+```
+Resultados 
+
+2024-05-19T15:13:26.209+0200    INFO    Reopening vulnerability DB
+2024-05-19T15:13:26.209+0200    INFO    Removing image caches...
+
+Directorio de caché
+
+Especificar donde se almanece el caché
+
+
+
+
+
+
+
+
         
 ## CONCLUSIONES
 
