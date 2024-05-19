@@ -189,6 +189,7 @@ docker push YOUR-USER-NAME/getting-started
 docker run -dp 0.0.0.0:3000:3000 YOUR-USER-NAME/getting-started
 ```
 ## SAST: Pruebas estáticas de seguridad de aplicaciones 
+
 ### Paso 1: Instalar Docker Bench Security
 1. Clonar el repositorio de Docker Bench Security.
     ```bash
@@ -379,6 +380,49 @@ Acciones Recomendadas
 * Restringir Privilegios: Configura los contenedores para que no adquieran privilegios adicionales.
 * Especificar Interfaces de Red: Asegúrate de que el tráfico de contenedores esté vinculado a interfaces de red específicas.
 
+## DAST: Pruebas dinámicas de seguridad de aplicaciones
+
+# Zed Attack Proxy (ZAP)
+Zed Attack Proxy (ZAP) es un escaner de aplicaciones web de código abierto. Para la instalación de esta aplicación nos dirigiremos a el siguiente link:
+
+* [zaproxy.org](https://www.zaproxy.org/)
+
+![zap1](https://github.com/paserarra0/to-do/assets/156304388/635adec0-cc48-4cd4-a6a7-9f590912df12)
+
+A continuación seleccionaremos el instalador de Linux ya que usaremos una máquina virtual Ubuntu 22.04
+
+![zap2](https://github.com/paserarra0/to-do/assets/156304388/70ea8b39-7a15-4797-8831-f624ca47d297)
+
+Una vez descargado el instalador, tendremos que instalar Java si no lo tenemos descargado. Lo podremos hacer con los siguientes comandos:
+```
+  sudo apt install default-jre
+  sudo apt install default-jdk
+```
+Para ejecutar el instalador tendremos que cambiar los permisos de la aplicación con el siguiente comando:
+```
+  chmod o+x ZAP_2_15_0_unix.sh
+```
+Finalmente lanzaremos el instalador con:
+```
+  sudo ./ZAP_2_15_0_unix.sh
+```
+A continuación se lanzará la interfaz gráfica del instalador, solo tendremos que darle a "Next" hasta que finalice. Cuando termine la instalación se abrirá ZAP y veremos el menú principal.
+
+![zap3](https://github.com/paserarra0/to-do/assets/156304388/383d98e9-4a74-48b1-bbc2-3d0a73d0f4eb)
+
+![zap4](https://github.com/paserarra0/to-do/assets/156304388/bc8fec33-b1f9-4928-8533-ff45c713bc88)
+
+Para lanzar un análisis automático le daremos al icono que se señala y completaremos el campo de URL con la dirección de la aplicación to-do.
+
+![zap5](https://github.com/paserarra0/to-do/assets/156304388/7f4cda68-9dab-4a92-86c3-f45a44097a6d)
+
+![zap6](https://github.com/paserarra0/to-do/assets/156304388/ed757189-8553-483f-be27-def7b79b75e2)
+
+Podremos ver las alertas encontradas con sus respectivos detalles.
+
+![zap7](https://github.com/paserarra0/to-do/assets/156304388/9353338f-e20a-47b2-91c2-52f5ffe7d682)
+
+
 
 
 
@@ -407,22 +451,34 @@ Borrar cachés
 $ trivy image --clear-cache
 ```
 Resultados 
-
+```bash
 2024-05-19T15:13:26.209+0200    INFO    Reopening vulnerability DB
 2024-05-19T15:13:26.209+0200    INFO    Removing image caches...
-
+```
 Directorio de caché
 
 Especificar donde se almanece el caché
+```bash
+$ trivy --cache-dir /tmp/trivy/ image python:3.4-alpine3.9
+```
+
+Servidor de caché 
+
+Esta función puede cambiar sin preservar la compatibilidad con versiones anteriores. Esta opción es útil para el modo cliente/servidor.
+
+```bash
+$ trivy server --cache-backend redis://localhost:6379
+```
+
+# Resultados del análisis de la aplicacion
+
+* Capacidad para Borrar Cachés: Trivy proporciona un comando específico (trivy image --clear-cache) para borrar los cachés de imágenes, lo cual es útil para mantener el sistema limpio y asegurar que los escaneos futuros utilicen datos actualizados.
+* Personalización del Directorio de Caché: Es posible especificar un directorio personalizado para el almacenamiento del caché mediante la opción --cache-dir. Esto ofrece flexibilidad para almacenar el caché en una ubicación distinta a la predeterminada, lo cual puede ser útil en sistemas con diferentes configuraciones de almacenamiento.
+* Uso de un Servidor de Caché: Trivy soporta la configuración de un servidor de caché externo, como Redis, a través de la opción --cache-backend. Esta funcionalidad es particularmente valiosa en entornos de cliente/servidor, donde varios clientes pueden beneficiarse de un caché centralizado, mejorando el rendimiento y la eficiencia de los escaneos. Se menciona que esta funcionalidad puede cambiar sin mantener compatibilidad con versiones anteriores, lo que sugiere la importancia de revisar las actualizaciones de la herramienta para asegurar la compatibilidad.
+* Mejora en la Gestión y Rendimiento: Las opciones para borrar el caché, personalizar el directorio de almacenamiento, y utilizar un servidor de caché contribuyen a una mejor gestión de los recursos y optimización del rendimiento de Trivy. Esto permite adaptarse a diferentes entornos y necesidades específicas de los usuarios
 
 
-
-
-
-
-
-
-        
+   
 ## CONCLUSIONES
 
 * Se reconoce la importancia del Ciclo de Vida de Desarrollo de Software (SDLC) para garantizar un desarrollo seguro desde el inicio del proyecto hasta su despliegue y mantenimiento.
