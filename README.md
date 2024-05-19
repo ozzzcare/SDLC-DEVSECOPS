@@ -298,7 +298,7 @@ Peligro: Repetido del punto 1.1.1.
     [WARN] 6.2 - Ensure that container sprawl is avoided (Manual)
         Peligro: Similar al anterior, demasiados contenedores pueden ser difíciles de gestionar y asegurar.
         
-# Resultados del análisis de verificación de la aplicaciób con parámetros modificados.
+# Resultados del análisis de verificación de la aplicación con parámetros modificados.
 
 [WARN] 4.1 - Ensure that a user for the container has been created (Automated):
         Antes: [WARN] * Running as root: sad_lehmann
