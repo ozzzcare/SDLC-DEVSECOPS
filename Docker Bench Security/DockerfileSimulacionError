@@ -1,0 +1,29 @@
+# syntax=docker/dockerfile:1
+# Utiliza una imagen base oficial pero introduce malas prácticas
+FROM node:14
+
+# Establece el directorio de trabajo
+WORKDIR /usr/src/app
+
+# Copia los archivos de la aplicación
+COPY package*.json ./
+
+# Instala las dependencias
+RUN npm install
+
+# Copia el resto de los archivos de la aplicación
+COPY . .
+
+# Expone el puerto 8080 de la aplicación
+EXPOSE 8080
+
+# Expone también el puerto 3000
+EXPOSE 3000
+
+# Ejecuta el contenedor como root (inseguro)
+USER root
+
+# Comando para ejecutar la aplicación sin límites de memoria
+CMD ["sh", "-c", "while :; do echo 'Hit CTRL+C'; sleep 1; done"]
+
+
