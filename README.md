@@ -255,8 +255,8 @@ Después de ejecutar el script, verás una salida detallada con varias verificac
 
 1.2 General Host Configuration
 
-[WARN] 1.2.1 - Ensure a separate partition for containers has been created (Automated)
-Peligro: Repetido del punto 1.1.1.
+    [WARN] 1.2.1 - Ensure a separate partition for containers has been created (Automated)
+        Peligro: Repetido del punto 1.1.1.
 
 2. Docker Daemon Configuration
 
@@ -300,86 +300,85 @@ Peligro: Repetido del punto 1.1.1.
         
 Resultados del análisis de verificación de la aplicaciób con parámetros modificados.
 
-    [WARN] 4.1 - Ensure that a user for the container has been created (Automated):
+[WARN] 4.1 - Ensure that a user for the container has been created (Automated):
         Antes: [WARN] * Running as root: sad_lehmann
         Ahora: [WARN] * Running as root: flamboyant_morse
-
-    [WARN] 4.6 - Ensure that HEALTHCHECK instructions have been added to container images (Automated):
+	
+ [WARN] 4.6 - Ensure that HEALTHCHECK instructions have been added to container images (Automated):
         Antes: [WARN] * No Healthcheck found: [getting-started-app:latest]
         Ahora: [WARN] * No Healthcheck found: [getting-started-app:latest]
         [WARN] * No Healthcheck found: e346052bbd7e
-
-    [WARN] 5.3 - Ensure that, if applicable, SELinux security options are set (Automated):
+	
+ [WARN] 5.3 - Ensure that, if applicable, SELinux security options are set (Automated):
         Antes: [WARN] * No SecurityOptions Found: sad_lehmann
         Ahora: [WARN] * No SecurityOptions Found: flamboyant_morse
-
-    [WARN] 5.9 - Ensure that only needed ports are open on the container (Manual):
+	
+ [WARN] 5.9 - Ensure that only needed ports are open on the container (Manual):
         Antes: [WARN] * Port in use: 3000 in sad_lehmann
         Ahora: [WARN] * Port in use: 3000 in flamboyant_morse
         [WARN] * Port in use: 8080 in flamboyant_morse
-
-    [WARN] 5.11 - Ensure that the memory usage for containers is limited (Automated):
+	
+ [WARN] 5.11 - Ensure that the memory usage for containers is limited (Automated):
         Antes: [WARN] * Container running without memory restrictions: sad_lehmann
         Ahora: [WARN] * Container running without memory restrictions: flamboyant_morse
-
-    [WARN] 5.12 - Ensure that CPU priority is set appropriately on containers (Automated):
+	
+ [WARN] 5.12 - Ensure that CPU priority is set appropriately on containers (Automated):
         Antes: [WARN] * Container running without CPU restrictions: sad_lehmann
         Ahora: [WARN] * Container running without CPU restrictions: flamboyant_morse
-
-    [WARN] 5.13 - Ensure that the container's root filesystem is mounted as read only (Automated):
+	
+ 
+[WARN] 5.13 - Ensure that the container's root filesystem is mounted as read only (Automated):
         Antes: [WARN] * Container running with root FS mounted R/W: sad_lehmann
         Ahora: [WARN] * Container running with root FS mounted R/W: flamboyant_morse
-
-    [WARN] 5.14 - Ensure that incoming container traffic is bound to a specific host interface (Automated):
+	
+ [WARN] 5.14 - Ensure that incoming container traffic is bound to a specific host interface (Automated):
         Antes: [WARN] * Port being bound to wildcard IP: 0.0.0.0 in sad_lehmann
         Ahora: [WARN] * Port being bound to wildcard IP: 0.0.0.0 in flamboyant_morse
         [WARN] * Port being bound to wildcard IP: 0.0.0.0 in flamboyant_morse
-
-    [INFO] 5.19 - Ensure that the default ulimit is overwritten at runtime if needed (Manual):
+	
+ [INFO] 5.19 - Ensure that the default ulimit is overwritten at runtime if needed (Manual):
         Antes: [INFO] * Container no default ulimit override: sad_lehmann
         Ahora: [INFO] * Container no default ulimit override: flamboyant_morse
-
-    [WARN] 5.26 - Ensure that the container is restricted from acquiring additional privileges (Automated):
+	
+ [WARN] 5.26 - Ensure that the container is restricted from acquiring additional privileges (Automated):
         Antes: [WARN] * Privileges not restricted: sad_lehmann
         Ahora: [WARN] * Privileges not restricted: flamboyant_morse
-
-    [WARN] 5.27 - Ensure that container health is checked at runtime (Automated):
+	
+ [WARN] 5.27 - Ensure that container health is checked at runtime (Automated):
         Antes: [WARN] * Health check not set: sad_lehmann
         Ahora: [WARN] * Health check not set: flamboyant_morse
-
-    [WARN] 5.29 - Ensure that the PIDs cgroup limit is used (Automated):
+	
+ [WARN] 5.29 - Ensure that the PIDs cgroup limit is used (Automated):
         Antes: [WARN] * PIDs limit not set: sad_lehmann
         Ahora: [WARN] * PIDs limit not set: flamboyant_morse
-
-    [INFO] 5.30 - Ensure that Docker's default bridge 'docker0' is not used (Manual):
+	
+ [INFO] 5.30 - Ensure that Docker's default bridge 'docker0' is not used (Manual):
         Antes: [INFO] * Container in docker0 network: sad_lehmann
         Ahora: [INFO] * Container in docker0 network: flamboyant_morse
-
-    [INFO] 6.1 - Ensure that image sprawl is avoided (Manual):
+	
+ [INFO] 6.1 - Ensure that image sprawl is avoided (Manual):
         Antes: [INFO] * There are currently: 4 images
         Ahora: [INFO] * There are currently: 6 images
-
-    [INFO] 6.2 - Ensure that container sprawl is avoided (Manual):
+	
+ [INFO] 6.2 - Ensure that container sprawl is avoided (Manual):
         Antes: [INFO] * There are currently a total of 6 containers, with 1 of them currently running
         Ahora: [INFO] * There are currently a total of 11 containers, with 1 of them currently running
 
 Resumen de las Diferencias
 
-    -Cambios en Nombres de Contenedores: Los contenedores han cambiado de sad_lehmann a flamboyant_morse.
-    -Nuevas Advertencias de Puertos: Se han detectado puertos adicionales en uso (8080) y se han reportado más advertencias de puertos abiertos.
-    -Más Contenedores y Imágenes: El número de contenedores e imágenes ha aumentado en el sistema.
-    -Advertencias y Configuraciones Persistentes: Muchas advertencias persisten con los nuevos contenedores, indicando configuraciones subóptimas similares a las anteriores.
+* Cambios en Nombres de Contenedores: Los contenedores han cambiado de sad_lehmann a flamboyant_morse.
+* Nuevas Advertencias de Puertos: Se han detectado puertos adicionales en uso (8080) y se han reportado más advertencias de puertos abiertos.
+* Más Contenedores y Imágenes: El número de contenedores e imágenes ha aumentado en el sistema.
+* Advertencias y Configuraciones Persistentes: Muchas advertencias persisten con los nuevos contenedores, indicando configuraciones subóptimas similares a las anteriores.
 
 Acciones Recomendadas
 
-    -Configurar Usuarios No Root: Asegúrate de que los contenedores no se ejecuten como root.
-    -Añadir Health Checks: Implementa instrucciones HEALTHCHECK en tus Dockerfile.
-    -Limitar Recursos: Establece límites de uso de memoria y CPU para los contenedores.
-    -Restringir Privilegios: Configura los contenedores para que no adquieran privilegios adicionales.
-    -Especificar Interfaces de Red: Asegúrate de que el tráfico de contenedores esté vinculado a interfaces de red específicas.
+* Configurar Usuarios No Root: Asegúrate de que los contenedores no se ejecuten como root.
+* Añadir Health Checks: Implementa instrucciones HEALTHCHECK en tus Dockerfile
+* Limitar Recursos: Establece límites de uso de memoria y CPU para los contenedores.
+* Restringir Privilegios: Configura los contenedores para que no adquieran privilegios adicionales.
+* Especificar Interfaces de Red: Asegúrate de que el tráfico de contenedores esté vinculado a interfaces de red específicas.
         
-
-
 ## CONCLUSIONES
 
 * Se reconoce la importancia del Ciclo de Vida de Desarrollo de Software (SDLC) para garantizar un desarrollo seguro desde el inicio del proyecto hasta su despliegue y mantenimiento.
