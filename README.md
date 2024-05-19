@@ -1,5 +1,5 @@
-# SDLC-DEVSECOPS
-Practica 2 S-SDLC - DevSecOps 
+# SDLC-DAST - SAST - RASP
+Practica 3 DAST - SAST - RASP 
 # SDLC
 
 ##  APP TO-DO DOCKER
