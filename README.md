@@ -422,7 +422,21 @@ Podremos ver las alertas encontradas con sus respectivos detalles.
 
 ![zap7](https://github.com/paserarra0/to-do/assets/156304388/9353338f-e20a-47b2-91c2-52f5ffe7d682)
 
+### Resultados del análisis de la aplicacion:
 
+**CSP: Wildcard Directive (2)**: la política de seguridad de contenido (CSP) utiliza comodines (wildcards) como '*'. Esto puede permitir la ejecución de scripts y recursos no autorizados. Para resolver esta alerta se podría restringir el uso de comodines en tu CSP y definir fuentes específicas de contenido. 
+
+**Content Security Policy (CSP) Header Not Set**: no se ha configurado la cabecera CSP, lo que permite la carga de scripts y recursos desde cualquier origen. Se debería configurar una política CSP adecuada que especifique las fuentes permitidas para scripts, estilos, imágenes, etc.
+
+**Missing Anti-clickjacking Header**: Falta la cabecera X-Frame-Options, lo que permite que tu sitio web sea embebido en un iframe por otros sitios, facilitando ataques de clickjacking.
+
+**Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s) (11)**: la cabecera X-Powered-By revela información sobre el servidor, como la tecnología y la versión utilizada, facilitando ataques específicos.
+
+**X-Content-Type-Options Header Missing (9)**: falta la cabecera X-Content-Type-Options, lo que permite a los navegadores interpretar los archivos de manera incorrecta y potencialmente peligrosa.
+
+**Information Disclosure - Suspicious Comments (16)**: se han encontrado comentarios sospechosos en el código fuente que podrían revelar información sensible o puntos de entrada para ataques.
+
+**Modern Web Application**: esta es una categoría general que ZAP utiliza para indicar que la aplicación web tiene características modernas. No es necesariamente una vulnerabilidad.
 
 
 
